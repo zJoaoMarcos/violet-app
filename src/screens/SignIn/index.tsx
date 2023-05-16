@@ -4,11 +4,11 @@ import {
   Center,
   FormControl,
   HStack,
-  Input,
   Text,
   VStack,
 } from "native-base";
 import React from "react";
+import { Input } from "../../components/Form/Input";
 import { Logo } from "../../components/Logo";
 
 export function SignIn() {
@@ -19,11 +19,19 @@ export function SignIn() {
           <Logo />
 
           <FormControl>
-            <FormControl.Label mt="7">E-mail</FormControl.Label>
-            <Input placeholder="Ex: jhon.doe@example.com" />
+            <Input
+              name="email"
+              type="text"
+              label="E-mail"
+              placeholder="Ex: jhon.doe@example.com"
+            />
 
-            <FormControl.Label mt="7">Senha</FormControl.Label>
-            <Input placeholder="**********" />
+            <Input
+              name="password"
+              type="password"
+              label="Senha"
+              placeholder="********"
+            />
           </FormControl>
 
           <Button colorScheme="purple" mt="8" w="full">
@@ -34,7 +42,7 @@ export function SignIn() {
 
           <HStack mt="5" justifyContent="center">
             <Text>
-              Não tem uma conta?{" "}
+              Não possui conta?{" "}
               <Text color="purple.500" fontWeight="semibold" underline>
                 Cadastre-se
               </Text>
