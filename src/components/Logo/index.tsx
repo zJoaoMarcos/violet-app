@@ -1,9 +1,14 @@
-import { Heading } from "native-base";
+import { Heading, Image } from "native-base";
+
+import logoImg from "../../assets/logo.png";
 
 export function Logo() {
   return (
-    <Heading color="purple.700" size="xl">
-      Violet
-    </Heading>
+    <>
+      <Image source={logoImg} alt="Logo da Violet" />
+      <Heading color="purple.700" size="xl" mt="10">
+        Violet
+      </Heading>
+    </>
   );
 }
