@@ -15,6 +15,8 @@ export function Input({ label, name, ...rest }: InputProps) {
         colorScheme="purple"
         borderColor="purple.400"
         _focus={{ borderColor: "purple.600", backgroundColor: "purple.100" }}
+        size="2xl"
+        fontSize="lg"
       />
     </FormControl>
   );
