@@ -1,10 +1,10 @@
 import { NativeBaseProvider } from "native-base";
-import { SignIn } from "./src/screens/SignIn";
+import { Routes } from "./src/routes";
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <SignIn />
+      <Routes />
     </NativeBaseProvider>
   );
 }
