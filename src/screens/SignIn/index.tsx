@@ -11,41 +11,45 @@ import React from "react";
 import { Input } from "../../components/Form/Input";
 import { Logo } from "../../components/Logo";
 
-export function SignIn() {
+export function SignIn({ navigation }) {
   return (
     <Center height="full">
       <VStack w="full" p="8">
         <Box w="full" alignItems="center">
-          <Logo />
+          <Logo imageSize="2xl" textSize="xl" />
 
           <FormControl>
-            <Input
-              name="email"
-              type="text"
-              label="E-mail"
-              placeholder="Ex: jhon.doe@example.com"
-            />
+            <VStack space={4}>
+              <Input
+                name="email"
+                type="text"
+                label="E-mail"
+                placeholder="Ex: jhon.doe@example.com"
+              />
 
-            <Input
-              name="password"
-              type="password"
-              label="Senha"
-              placeholder="********"
-            />
+              <Input
+                name="password"
+                type="password"
+                label="Senha"
+                placeholder="********"
+              />
+            </VStack>
           </FormControl>
 
-          <Button colorScheme="purple" mt="8" w="full">
+          <Button colorScheme="purple" mt="8" w="full" borderRadius={6}>
             <Text fontWeight="bold" color="white" fontSize="lg">
               Entrar
             </Text>
           </Button>
 
-          <HStack mt="5" justifyContent="center">
-            <Text>
-              Não possui conta?{" "}
-              <Text color="purple.500" fontWeight="semibold" underline>
-                Cadastre-se
-              </Text>
+          <HStack mt="5" justifyContent="center" space={2}>
+            <Text>Não possui conta?</Text>
+            <Text
+              onPress={() => navigation.navigate("SignUp")}
+              color="purple.500"
+              fontWeight="semibold"
+            >
+              Cadastre-se
             </Text>
           </HStack>
         </Box>

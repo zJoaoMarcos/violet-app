@@ -14,6 +14,7 @@ export function Input({ label, name, ...rest }: InputProps) {
         {...rest}
         colorScheme="purple"
         borderColor="purple.400"
+        borderRadius={8}
         _focus={{ borderColor: "purple.600", backgroundColor: "purple.100" }}
         size="2xl"
         fontSize="lg"
