@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   Box,
   Button,
@@ -12,7 +13,13 @@ import React from "react";
 import { Input } from "../../components/Form/Input";
 import { Logo } from "../../components/Logo";
 
-export function SignUp({ navigation }) {
+export function SignUp() {
+  const navigation = useNavigation();
+
+  function openSignIn() {
+    navigation.navigate("SignIn");
+  }
+
   return (
     <ScrollView pt="2">
       <Center height="full">
@@ -73,7 +80,7 @@ export function SignUp({ navigation }) {
             <HStack mt="5" justifyContent="center" space={2}>
               <Text>Já possui uma conta?</Text>
               <Text
-                onPress={() => navigation.navigate("SignIn")}
+                onPress={openSignIn}
                 color="purple.500"
                 fontWeight="semibold"
               >

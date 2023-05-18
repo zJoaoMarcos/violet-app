@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   Box,
   Button,
@@ -11,7 +12,13 @@ import React from "react";
 import { Input } from "../../components/Form/Input";
 import { Logo } from "../../components/Logo";
 
-export function SignIn({ navigation }) {
+export function SignIn() {
+  const navigation = useNavigation();
+
+  function openSignUp() {
+    navigation.navigate("SignUp");
+  }
+
   return (
     <Center height="full">
       <VStack w="full" p="8">
@@ -44,11 +51,7 @@ export function SignIn({ navigation }) {
 
           <HStack mt="5" justifyContent="center" space={2}>
             <Text>Não possui conta?</Text>
-            <Text
-              onPress={() => navigation.navigate("SignUp")}
-              color="purple.500"
-              fontWeight="semibold"
-            >
+            <Text onPress={openSignUp} color="purple.500" fontWeight="semibold">
               Cadastre-se
             </Text>
           </HStack>
