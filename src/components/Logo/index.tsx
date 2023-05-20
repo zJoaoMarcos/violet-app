@@ -1,6 +1,6 @@
 import { Heading, Image, VStack } from "native-base";
 
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/logo-white.png";
 
 interface LogoProps {
   imageSize?: "sm" | "md" | "lg" | "xl" | "2xl";

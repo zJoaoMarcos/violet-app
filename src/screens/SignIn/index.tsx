@@ -7,6 +7,7 @@ import {
   HStack,
   Text,
   VStack,
+  View,
 } from "native-base";
 import React from "react";
 import { Input } from "../../components/Form/Input";
@@ -21,6 +22,14 @@ export function SignIn() {
 
   return (
     <Center height="full">
+      <View
+        position="absolute"
+        bg="purple.500"
+        h="500px"
+        w="520px"
+        top="-200px"
+        borderRadius="full"
+      />
       <VStack w="full" p="8">
         <Box w="full" alignItems="center">
           <Logo imageSize="2xl" textSize="xl" />
