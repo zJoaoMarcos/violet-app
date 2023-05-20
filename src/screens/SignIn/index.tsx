@@ -2,14 +2,15 @@ import { useNavigation } from "@react-navigation/native";
 import {
   Box,
   Button,
-  Center,
   FormControl,
   HStack,
+  Image,
   Text,
   VStack,
-  View,
 } from "native-base";
 import React from "react";
+
+import BackgroundImg from "../../assets/background-signIn.png";
 import { Input } from "../../components/Form/Input";
 import { Logo } from "../../components/Logo";
 
@@ -21,17 +22,20 @@ export function SignIn() {
   }
 
   return (
-    <Center height="full">
-      <View
+    <VStack flex={1} bg="white" background="#FCFC">
+      <Image
+        w="full"
+        h="full"
+        source={BackgroundImg}
+        alt="background image"
+        resizeMode="stretch"
         position="absolute"
-        bg="purple.500"
-        h="500px"
-        w="520px"
-        top="-200px"
-        borderRadius="full"
+        top={0}
+        left={0}
       />
+
       <VStack w="full" p="8">
-        <Box w="full" alignItems="center">
+        <Box w="full" alignItems="center" mt="20">
           <Logo imageSize="2xl" textSize="xl" />
 
           <FormControl>
@@ -66,6 +70,6 @@ export function SignIn() {
           </HStack>
         </Box>
       </VStack>
-    </Center>
+    </VStack>
   );
 }

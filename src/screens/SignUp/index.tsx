@@ -5,6 +5,7 @@ import {
   Center,
   FormControl,
   HStack,
+  Image,
   ScrollView,
   Text,
   VStack,
@@ -12,6 +13,8 @@ import {
 import React from "react";
 import { Input } from "../../components/Form/Input";
 import { Logo } from "../../components/Logo";
+
+import BackgroundImg from "../../assets/background-signUp.png";
 
 export function SignUp() {
   const navigation = useNavigation();
@@ -21,7 +24,17 @@ export function SignUp() {
   }
 
   return (
-    <ScrollView pt="2">
+    <ScrollView pt="2" flex={1} bg="#FCFCFC" top={-10}>
+      <Image
+        w="full"
+        h="full"
+        source={BackgroundImg}
+        alt="background image"
+        resizeMode="stretch"
+        position="absolute"
+        top={0}
+        left={0}
+      />
       <Center height="full">
         <VStack w="full" p="8">
           <Box w="full" alignItems="center">
