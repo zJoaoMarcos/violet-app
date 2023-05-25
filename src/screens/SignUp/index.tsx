@@ -23,6 +23,10 @@ export function SignUp() {
     navigation.navigate("SignIn");
   }
 
+  function openRegisterPlant() {
+    navigation.navigate("RegisterPlant");
+  }
+
   return (
     <ScrollView pt="2" flex={1} bg="#FCFCFC" top={-10}>
       <Image
@@ -84,7 +88,13 @@ export function SignUp() {
               </VStack>
             </FormControl>
 
-            <Button colorScheme="purple" mt="8" w="full" borderRadius={6}>
+            <Button
+              onPress={openRegisterPlant}
+              colorScheme="purple"
+              mt="8"
+              w="full"
+              borderRadius={6}
+            >
               <Text fontWeight="bold" color="white" fontSize="lg">
                 Entrar
               </Text>
