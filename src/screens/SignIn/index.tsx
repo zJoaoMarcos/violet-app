@@ -2,13 +2,14 @@ import { useNavigation } from "@react-navigation/native";
 import {
   Box,
   Button,
+  Checkbox,
   FormControl,
   HStack,
   Image,
   Text,
   VStack,
 } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 
 import BackgroundImg from "../../assets/background-signIn.png";
 import { Input } from "../../components/Form/Input";
@@ -16,6 +17,10 @@ import { Logo } from "../../components/Logo";
 
 export function SignIn() {
   const navigation = useNavigation();
+
+  const [rememberMe, setRememberMe] = useState(true);
+
+  console.log(rememberMe);
 
   function openSignUp() {
     navigation.navigate("SignUp");
@@ -54,6 +59,18 @@ export function SignIn() {
                 placeholder="********"
               />
             </VStack>
+
+            <Checkbox
+              value="lembrar de mim"
+              mt="4"
+              accessibilityLabel="Checkbox para lembrar de mim"
+              colorScheme="purple"
+              color="gray.700"
+              isChecked={rememberMe}
+              onChange={(e) => setRememberMe(e)}
+            >
+              Lembrar de mim
+            </Checkbox>
           </FormControl>
 
           <Button colorScheme="purple" mt="8" w="full" borderRadius={6}>
