@@ -3,11 +3,20 @@ import { FormControl, IInputProps, Input as NativeInput } from "native-base";
 interface InputProps extends IInputProps {
   name: string;
   label?: string;
+  errorMessage?: string | null;
 }
 
-export function Input({ label, name, ...rest }: InputProps) {
+export function Input({
+  label,
+  name,
+  errorMessage = null,
+  isInvalid,
+  ...rest
+}: InputProps) {
+  const invalid = !!errorMessage || isInvalid;
+
   return (
-    <FormControl>
+    <FormControl isInvalid={invalid}>
       {!!label && <FormControl.Label pl="1">{label}:</FormControl.Label>}
       <NativeInput
         id={name}
@@ -19,6 +28,7 @@ export function Input({ label, name, ...rest }: InputProps) {
         size="2xl"
         fontSize="lg"
       />
+      <FormControl.ErrorMessage>{errorMessage}</FormControl.ErrorMessage>
     </FormControl>
   );
 }
